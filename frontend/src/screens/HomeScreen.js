@@ -3,17 +3,17 @@ import axios from "axios";
 import { Row, Col } from "react-bootstrap";
 import Product from "../components/Product";
 import { Helmet } from "react-helmet-async";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
 const reducer = (state, action) => {
     switch (action.type) {
         case "FETCH_REQUEST":
             return { ...state, loading: true };
-
         case "FETCH_SUCCESS":
             return { ...state, products: action.payload, loading: false };
-
         case "FETCH_FAIL":
-            return { ...state, error: action.payload, loading: false };
+            return { ...state, loading: false, error: action.payload };
         default:
             return state;
     }
@@ -32,7 +32,8 @@ function HomeScreen() {
                 const result = await axios.get("/api/products");
                 dispatch({ type: "FETCH_SUCCESS", payload: result.data });
             } catch (error) {
-                dispatch({ type: "FETCH_FAIL", payload: error });
+                console.log(error.message);
+                dispatch({ type: "FETCH_FAIL", payload: error.message });
             }
         };
         fetchData();
@@ -45,9 +46,9 @@ function HomeScreen() {
             <h1>list product</h1>
             <div className="products">
                 {loading ? (
-                    <div>Loading...</div>
+                    <LoadingBox />
                 ) : error ? (
-                    <div>{error}</div>
+                    <MessageBox variant="danger">{error}</MessageBox>
                 ) : (
                     <Row>
                         {products.map((product) => (

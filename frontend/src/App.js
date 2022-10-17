@@ -10,8 +10,8 @@ import { useContext } from "react";
 import { Store } from "./Store";
 
 function App() {
-    const { state } = useContext(Store);
-    const { cart } = state;
+    const { cartState } = useContext(Store);
+    const { cart } = cartState;
     return (
         <Router>
             <div className="d-flex flex-column site-container">
@@ -24,9 +24,9 @@ function App() {
                             <Nav className="me-auto">
                                 <Link to="/cart" className="nav-link">
                                     Cart
-                                    {cart.cartItem.length > 0 && (
+                                    {cart.cartItems.length > 0 && (
                                         <Badge pill bg="danger">
-                                            {cart.cartItem.length}
+                                            {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                                         </Badge>
                                     )}
                                 </Link>

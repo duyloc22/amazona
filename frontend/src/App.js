@@ -8,10 +8,12 @@ import { Badge, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Store } from "./Store";
+import SigninScreen from "./screens/SigninScreen";
 
 function App() {
     const { cartState } = useContext(Store);
     const { cart } = cartState;
+    console.log(cart);
     return (
         <Router>
             <div className="d-flex flex-column site-container">
@@ -38,6 +40,8 @@ function App() {
                     <Container className="mt-3">
                         <Routes>
                             <Route path="/product/:slug" element={<ProductScreen />} />
+                            <Route path="/signin" element={<SigninScreen />} />
+
                             <Route path="/" element={<HomeScreen />} />
                         </Routes>
                     </Container>

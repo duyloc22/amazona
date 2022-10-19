@@ -36,3 +36,7 @@ main {
 .img-large {
     max-width: 100%;
 }
+
+.sm-con {
+    max-width: 400px;
+}

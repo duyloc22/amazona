@@ -82,3 +82,9 @@
 
 1. check exist item in the cart
 2. check count in stock in backend
+
+## Create Signin Screen
+
+1. create signin forrm
+2. add email and password
+3. add signin button

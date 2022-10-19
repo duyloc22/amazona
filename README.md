@@ -59,7 +59,7 @@
 2. Create product component
 3. use rating component in product component
 
-## Create Details Screen
+## Create Product Details Screen
 
 1. fetch product from backend
 2. create 3 column for image, info and action
@@ -82,6 +82,12 @@
 
 1. check exist item in the cart
 2. check count in stock in backend
+
+## Create Cart Screen
+
+1. create 2 column
+2. display item list
+3. create action column
 
 ## Create Signin Screen
 

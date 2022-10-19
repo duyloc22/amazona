@@ -40,3 +40,6 @@ main {
 .sm-con {
     max-width: 400px;
 }
+.img-thumbnail {
+    height: 80px;
+}

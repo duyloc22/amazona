@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Store } from "./Store";
 import SigninScreen from "./screens/SigninScreen";
+import CartScreen from "./screens/CartScreen";
 
 function App() {
     const { cartState } = useContext(Store);
     const { cart } = cartState;
-    console.log(cart);
     return (
         <Router>
             <div className="d-flex flex-column site-container">
@@ -40,6 +40,7 @@ function App() {
                     <Container className="mt-3">
                         <Routes>
                             <Route path="/product/:slug" element={<ProductScreen />} />
+                            <Route path="/cart" element={<CartScreen />} />
                             <Route path="/signin" element={<SigninScreen />} />
 
                             <Route path="/" element={<HomeScreen />} />

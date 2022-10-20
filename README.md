@@ -89,8 +89,14 @@
 2. display item list
 3. create action column
 
-## Create Signin Screen
+## Create SignIn Screen
 
 1. create signin forrm
 2. add email and password
 3. add signin button
+
+## Complete CartScreen
+
+1. click handler for inc/dec
+2. click handler for remove item
+3. click handler for checkout

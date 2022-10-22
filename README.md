@@ -100,3 +100,10 @@
 1. click handler for inc/dec
 2. click handler for remove item
 3. click handler for checkout
+
+## Connect to MongoDB Database
+
+1. create atlas mongodb database
+2. install local mongodb database
+3. npm install mongoose
+4. connect to mongodb database
